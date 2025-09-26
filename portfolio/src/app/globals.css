@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+/* Corpo da página e container principal */
+body,
+html,
+.forca-game-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff; /* Fundo desejado */
+  color: #000000; /* Texto branco para contraste */
+}
+
+
+
+/* Container da forca */
+.forca-container {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  margin: 0 auto 20px auto;
+}
+
+/* Base da forca */
+.forca-base {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #333;
+}
+
+/* Poste vertical */
+.forca-poste-vertical {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 10px;
+  height: 230px;
+  background-color: #333;
+}
+
+/* Poste horizontal */
+.forca-poste-horizontal {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 100px;
+  height: 10px;
+  background-color: #333;
+}
+
+/* Corda */
+.forca-corda {
+  position: absolute;
+  top: 10px;
+  left: 140px;
+  width: 2px;
+  height: 50px;
+  background-color: #333;
+}
+
+/* Cabeça */
+.forca-cabeca {
+  position: absolute;
+  top: 40px;
+  left: 125px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #333;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Corpo */
+.forca-corpo {
+  position: absolute;
+  top: 70px;
+  left: 139px;
+  width: 2px;
+  height: 60px;
+  background-color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Braços e pernas */
+.forca-braco-esquerdo, .forca-braco-direito, .forca-perna-esquerda, .forca-perna-direita {
+  position: absolute;
+  width: 2px;
+  background-color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.forca-braco-esquerdo {
+  top: 75px;
+  left: 139px;
+  height: 35px;
+  transform: rotate(-45deg);
+  transform-origin: top;
+}
+
+.forca-braco-direito {
+  top: 75px;
+  left: 139px;
+  height: 35px;
+  transform: rotate(45deg);
+  transform-origin: top;
+}
+
+.forca-perna-esquerda {
+  top: 130px;
+  left: 139px;
+  height: 35px;
+  transform: rotate(-30deg);
+  transform-origin: top;
+}
+
+.forca-perna-direita {
+  top: 130px;
+  left: 139px;
+  height: 35px;
+  transform: rotate(30deg);
+  transform-origin: top;
+}
+
+/* Mostrar partes */
+.show { opacity: 1; }
