@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from "react";
-import Link from "next/link"; // import para o botão de voltar
+import Link from "next/link";
 
-const palavras = [
+const palavras: string[] = [
   "REACT", "JAVASCRIPT", "PORTFOLIO", "NEXTJS", "FRONTEND",
   "BACKEND", "COMPONENTE", "ESTADO", "PROPS", "FUNCIONAL",
   "CLASSE", "HOOKS", "REDUX", "CONTEXT", "NODEJS",
@@ -12,19 +12,19 @@ const palavras = [
   "AJAX", "PROMISE", "ASYNC", "AWAIT", "DOM"
 ];
 
-const getPalavraAleatoria = () => {
+const getPalavraAleatoria = (): string => {
   const index = Math.floor(Math.random() * palavras.length);
   return palavras[index];
 };
 
 const ForcaGame = () => {
-  const [palavra, setPalavra] = useState(getPalavraAleatoria());
-  const [letrasUsadas, setLetrasUsadas] = useState([]);
-  const [erros, setErros] = useState(0);
-  const [letraInput, setLetraInput] = useState("");
+  const [palavra, setPalavra] = useState<string>(getPalavraAleatoria());
+  const [letrasUsadas, setLetrasUsadas] = useState<string[]>([]);
+  const [erros, setErros] = useState<number>(0);
+  const [letraInput, setLetraInput] = useState<string>("");
   const maxErros = 6;
 
-  const handleLetra = (letra) => {
+  const handleLetra = (letra: string) => {
     letra = letra.toUpperCase();
     if (!letrasUsadas.includes(letra) && letra.match(/[A-Z]/)) {
       setLetrasUsadas([...letrasUsadas, letra]);
@@ -34,7 +34,7 @@ const ForcaGame = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleLetra(letraInput);
     setLetraInput("");
@@ -156,7 +156,7 @@ const ForcaGame = () => {
 
       {/* Botão voltar ao portfólio */}
       <div className="mt-6">
-        <Link href="/" passHref>
+        <Link href="/">
           <button className="bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors">
             Voltar ao Portfólio
           </button>
