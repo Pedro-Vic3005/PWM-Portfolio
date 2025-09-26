@@ -19,12 +19,18 @@ const Hero = () => {
 
       {/* Descrição */}
       <p className="text-gray-500 max-w-xl mb-6">
-        "Acredite na grandeza de pequenos começos"
+        &quot;Acredite na grandeza de pequenos começos&quot;
       </p>
 
       {/* Botão de contato */}
-      
-      
+      <Link
+        href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CNvvJFXwClSGjLrZdVMcQnlhwGrQsNhNZQgmGgcZdfZnhSLznRXZkXNvGKjvSfDLQhpwfxVsltVVPqjbJkVJxhstkScnvDCLvmBlnNBHSjTHftQjcXCHRLRvMRdZBzzRMKVBvjlNnWvjBpVgfpDqfBTDNr"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Entre em Contato
+      </Link>
     </section>
   );
 };
